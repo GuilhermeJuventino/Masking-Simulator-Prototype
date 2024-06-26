@@ -1,4 +1,39 @@
-[gd_scene format=3 uid="uid://dki8vp44q76mj"]
+[gd_scene load_steps=7 format=3 uid="uid://dki8vp44q76mj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc4bs"]
+bg_color = Color(0.113725, 0, 0.168627, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7pdl"]
+bg_color = Color(0.113725, 0, 0.168627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wix54"]
+size = Vector2(905, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy4f5"]
+size = Vector2(905, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67mp5"]
+size = Vector2(11, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gja6"]
+size = Vector2(11, 255)
 
 [node name="Game" type="Node2D"]
 
@@ -21,13 +56,19 @@ anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 646.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -447.5
+offset_top = 32.0
+offset_right = 448.5
+offset_bottom = 72.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_nc4bs")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="UI"]
 custom_minimum_size = Vector2(900, 200)
@@ -53,3 +94,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7pdl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="UI/ReferenceRect"]
+position = Vector2(10.5, -4)
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/ReferenceRect/StaticBody2D"]
+position = Vector2(439.5, -2)
+shape = SubResource("RectangleShape2D_wix54")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="UI/ReferenceRect/StaticBody2D"]
+position = Vector2(439.5, 259)
+shape = SubResource("RectangleShape2D_dy4f5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="UI/ReferenceRect/StaticBody2D"]
+position = Vector2(-13.5, 127)
+shape = SubResource("RectangleShape2D_67mp5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="UI/ReferenceRect/StaticBody2D"]
+position = Vector2(892.5, 128.5)
+shape = SubResource("RectangleShape2D_8gja6")
