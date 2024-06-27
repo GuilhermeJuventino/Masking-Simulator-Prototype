@@ -1,4 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dki8vp44q76mj"]
+[gd_scene load_steps=9 format=3 uid="uid://dki8vp44q76mj"]
+
+[ext_resource type="PackedScene" uid="uid://dxfhlixfvrjsl" path="res://Scenes/Player/Player.tscn" id="1_7higc"]
+[ext_resource type="PackedScene" uid="uid://fowg82uogum6" path="res://Scenes/Enemy/Enemy.tscn" id="2_bq2nf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc4bs"]
 bg_color = Color(0.113725, 0, 0.168627, 1)
@@ -69,6 +72,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_nc4bs")
+value = 100.0
 
 [node name="ReferenceRect" type="ReferenceRect" parent="UI"]
 custom_minimum_size = Vector2(900, 200)
@@ -116,3 +120,9 @@ shape = SubResource("RectangleShape2D_67mp5")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="UI/ReferenceRect/StaticBody2D"]
 position = Vector2(892.5, 128.5)
 shape = SubResource("RectangleShape2D_8gja6")
+
+[node name="Enemy" parent="." instance=ExtResource("2_bq2nf")]
+position = Vector2(680, 440)
+
+[node name="Player" parent="." instance=ExtResource("1_7higc")]
+position = Vector2(360, 440)
