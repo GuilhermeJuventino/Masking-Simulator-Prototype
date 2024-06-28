@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://fowg82uogum6"]
+[gd_scene load_steps=5 format=3 uid="uid://fowg82uogum6"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/Enemy.gd" id="1_fyk7x"]
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyValues.gd" id="1_lrncq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjxv6"]
 size = Vector2(64, 40)
@@ -7,10 +10,12 @@ size = Vector2(64, 40)
 size = Vector2(49, 28)
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_lrncq")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 8
+script = ExtResource("1_fyk7x")
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
 offset_right = 64.0
@@ -28,3 +33,6 @@ collision_layer = 2
 position = Vector2(32.5, 20)
 shape = SubResource("RectangleShape2D_2woxm")
 debug_color = Color(0.721569, 0.360784, 0.796078, 0.419608)
+
+[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
