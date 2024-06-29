@@ -132,13 +132,13 @@ teleport_points = [NodePath("TeleportPoint"), NodePath("TeleportPoint2"), NodePa
 position = Vector2(24, 24)
 
 [node name="TeleportPoint2" parent="Teleporters" instance=ExtResource("2_msg1b")]
-position = Vector2(872, 24)
+position = Vector2(816, 24)
 
 [node name="TeleportPoint3" parent="Teleporters" instance=ExtResource("2_msg1b")]
-position = Vector2(24, 232)
+position = Vector2(24, 192)
 
 [node name="TeleportPoint4" parent="Teleporters" instance=ExtResource("2_msg1b")]
-position = Vector2(872, 232)
+position = Vector2(816, 192)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player", "health_bar", "teleporters") instance=ExtResource("2_bq2nf")]
 position = Vector2(680, 440)

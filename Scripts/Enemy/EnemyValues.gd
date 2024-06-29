@@ -14,12 +14,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if player:
-		print(str(player_body))
-	
-	if health_bar:
-		print(str(health_bar.value))
-	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

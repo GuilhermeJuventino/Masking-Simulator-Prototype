@@ -29,12 +29,12 @@ func Teleport():
 		var teleport_index = randi_range(0, 3)
 		
 		is_invincible = true
-		#visible = false
+		visible = false
 		is_teleporting = true
 		global_position = teleport_points[teleport_index].global_position
 		
 		is_teleporting = false
-		#visible = true
+		visible = true
 		is_invincible = false
 		
 		teleport_cooldown.start()
@@ -45,15 +45,12 @@ func _ready():
 func _physics_process(_delta):
 	Teleport()
 	CheckCollision()
-	#print(str(position))
 
 	move_and_slide()
 
 func _on_area_2d_area_entered(_area):
 	player_in = true
-	#print("player_in: " + str(player_in))
 
 
 func _on_area_2d_area_exited(_area):
 	player_in = false
-	#print("player_in: " + str(player_in))
