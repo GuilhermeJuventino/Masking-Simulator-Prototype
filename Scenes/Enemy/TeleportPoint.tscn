@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://8dyrfbs5c724"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fobe3"]
+
+[node name="TeleportPoint" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fobe3")
+debug_color = Color(0.825081, 0.389334, 0.228854, 0.42)
