@@ -74,7 +74,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_nc4bs")
-value = 100.0
+allow_greater = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="UI"]
 custom_minimum_size = Vector2(900, 200)

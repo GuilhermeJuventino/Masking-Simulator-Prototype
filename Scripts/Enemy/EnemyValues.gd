@@ -14,7 +14,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	health_bar.max_value = max_health
+	health_bar.value = health
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

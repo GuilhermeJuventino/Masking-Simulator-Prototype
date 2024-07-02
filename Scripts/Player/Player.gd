@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+
 func NormalizeSpeed():
 	velocity.x = velocity.x * (sqrt(2) / 2)
 	velocity.y = velocity.y * (sqrt(2) / 2)
