@@ -22,6 +22,10 @@ var teleport_index = randi_range(0, 3)
 signal player_is_colliding
 signal player_is_not_colliding
 
+func Death():
+	if health_bar.value <= 0:
+		get_tree().change_scene_to_file("res://Scenes/Victory.tscn")
+
 func CheckCollision():
 	# Detect if player has entered enemy's area 2d
 	# print debug variable if collision was detected
@@ -75,3 +79,4 @@ func _physics_process(_delta):
 	CheckCollision()
 
 	move_and_slide()
+	Death()
