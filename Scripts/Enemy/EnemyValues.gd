@@ -5,11 +5,12 @@ extends Node2D
 @export var health: int = max_health
 
 @export_group("Required nodes")
-@export var player: Node2D
+@export var player: CharacterBody2D
 @export var health_bar: ProgressBar
 @export var teleporters: Node2D
+@export var bullet : PackedScene
 
-@onready var player_body = player.get_node("CharacterBody2D")
+#@onready var player_body = player.get_node("CharacterBody2D")
 
 
 # Called when the node enters the scene tree for the first time.

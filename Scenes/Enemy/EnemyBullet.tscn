@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://yfcijelvkqon"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/EnemyBullet.gd" id="1_t355k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbhbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ejt"]
+size = Vector2(14, 14)
+
+[node name="EnemyBullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_t355k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.0862745, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_qbhbb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_11ejt")
+debug_color = Color(0.772549, 0.439216, 0.141176, 0.419608)
+
+[node name="Lifetime" type="Timer" parent="."]
+one_shot = true
+autostart = true
